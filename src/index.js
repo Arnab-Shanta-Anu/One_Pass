@@ -59,11 +59,18 @@ function scramble(pass) {
     ["9", 36],
   ]);
   let repPass = "";
-  console.log(pass.length);
+  let char;
+  let number;
   for (let i = 0; i < pass.length; i++) {
-    console.log("inside loop");
-    repPass += map.get(pass[i]);
-    console.log(repPass);
+    char = map.get(pass[i]) % 6;
+    number = char % 6 == 0 ? char / 6 : char / 6 + 1;
+    repPass.concat(char);
+    repPass.concat(number + " ");
   }
   return repPass;
 }
+/**
+ * todo
+ * use google drive to upload the data
+ *
+ */
