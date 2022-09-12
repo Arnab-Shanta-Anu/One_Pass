@@ -59,6 +59,7 @@ function scramble(pass) {
     "9",
   ];
   let repPass = "";
+  console.log(typeof repPass);
   let char;
   let number;
   for (let i = 0; i < pass.length; i++) {
@@ -68,7 +69,7 @@ function scramble(pass) {
     console.log(char);
 
     // number = char % 6 === 0 ? char / 6 : char / 6 + 1;
-    repPass += char + " ";
+    repPass = repPass.concat(char, " ");
     // repPass.concat(number + " ");
   }
   return repPass;
