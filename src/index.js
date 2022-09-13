@@ -64,6 +64,8 @@ function scramble(pass) {
   let number;
   for (let i = 0; i < pass.length; i++) {
     char = map.indexOf(pass[i]) % 6;
+    console.log(char)
+    char += 6*i;
     console.log(char);
     char = map[char];
     console.log(char);
