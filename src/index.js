@@ -6,7 +6,7 @@ const p1 = document.getElementById("pass");
 const target = document.getElementById("target");
 
 btn.addEventListener("click", function (event) {
-  target.innerHTML = scramble(p1.value);
+  target.innerHTML = scramble(p1.value.toLowerCase());
 });
 /**
  *
@@ -73,7 +73,7 @@ function scramble(pass) {
     repPass = repPass.concat(char);
     repPass = repPass.concat(number, " ");
   }
-  return repPass;
+  return repPass.toUpperCase();
 }
 /**
  * todo
