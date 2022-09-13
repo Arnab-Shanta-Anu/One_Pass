@@ -3,7 +3,6 @@ const path = require("path");
 
 const btn = document.getElementById("btn");
 const p1 = document.getElementById("pass1");
-const p2 = document.getElementById("pass2");
 const target = document.getElementById("target");
 
 btn.addEventListener("click", function (event) {
@@ -59,20 +58,16 @@ function scramble(pass) {
     "9",
   ];
   let repPass = "";
-  console.log(typeof repPass);
   let char;
   let number;
   for (let i = 0; i < pass.length; i++) {
-    char = map.indexOf(pass[i]) % 6;
-    console.log(char)
-    char += 6*i;
-    console.log(char);
+    let charNo = map.indexOf(pass[i]);
+    char = charNo % 6;
+    number = parseInt(charNo / 6) + 1;
+    char += 6 * i;
     char = map[char];
-    console.log(char);
-
-    // number = char % 6 === 0 ? char / 6 : char / 6 + 1;
-    repPass = repPass.concat(char, " ");
-    // repPass.concat(number + " ");
+    repPass = repPass.concat(char);
+    repPass = repPass.concat(number, " ");
   }
   return repPass;
 }
